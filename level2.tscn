@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=3 uid="uid://cs4q6dtymmofg"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ct63p"]
+[ext_resource type="PackedScene" uid="uid://ccsuqw0r3wrcr" path="res://level2map.tscn" id="1_ure3t"]
+[ext_resource type="PackedScene" uid="uid://b1e1gpotifi5t" path="res://coin.tscn" id="2_06upg"]
+[ext_resource type="Script" path="res://playerlevel2.gd" id="3_hs0oq"]
+[ext_resource type="PackedScene" uid="uid://b2m4ihijwujnr" path="res://Player.tscn" id="3_w7o3v"]
+[ext_resource type="PackedScene" uid="uid://b2e6s0dohom7l" path="res://level2ui.tscn" id="5_57ohn"]
+[ext_resource type="PackedScene" uid="uid://dbufnkpjfwd7w" path="res://shark.tscn" id="7_vx57u"]
+[ext_resource type="PackedScene" uid="uid://cyqnbpu3mt6e2" path="res://door.tscn" id="8_bo3kj"]
+[ext_resource type="PackedScene" uid="uid://4r5kbof2n6w0" path="res://notification.tscn" id="9_qx4i0"]
+[ext_resource type="PackedScene" uid="uid://clfkvx6egfcjj" path="res://mobilecontrols.tscn" id="10_qg8ib"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a5bdh"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="level2" type="Node2D"]
+script = ExtResource("1_ct63p")
+
+[node name="player" parent="." instance=ExtResource("3_w7o3v")]
+position = Vector2(197, 585)
+script = ExtResource("3_hs0oq")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = -11
+limit_bottom = 1000
+
+[node name="TileMap" parent="." instance=ExtResource("1_ure3t")]
+position = Vector2(28, -170)
+
+[node name="coin" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(329, 868)
+
+[node name="coin6" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(2833, 864)
+
+[node name="coin7" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(2441, 844)
+
+[node name="coin13" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(3155, 848)
+
+[node name="coin14" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(3507, 843)
+
+[node name="coin19" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(3652, 655)
+
+[node name="coin15" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(3830, 838)
+
+[node name="coin16" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(4172, 833)
+
+[node name="coin17" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(4541, 840)
+
+[node name="coin18" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(4867, 847)
+
+[node name="coin12" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(2109, 846)
+
+[node name="coin8" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(1933, 684)
+
+[node name="coin9" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(1425, 844)
+
+[node name="coin10" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(757, 704)
+
+[node name="coin11" parent="." instance=ExtResource("2_06upg")]
+position = Vector2(621, 848)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.421
+anchor_bottom = 1.0
+offset_left = 1624.0
+offset_top = 10.0
+offset_right = -187.456
+offset_bottom = -869.0
+text = "coins: 0"
+label_settings = SubResource("LabelSettings_a5bdh")
+
+[node name="Panel" parent="." instance=ExtResource("5_57ohn")]
+offset_left = 43.0
+offset_top = 98.0
+offset_right = 1058.0
+offset_bottom = 162.0
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_vx57u")]
+position = Vector2(501, 1057)
+
+[node name="Area2D" parent="." instance=ExtResource("8_bo3kj")]
+position = Vector2(5465, 805)
+
+[node name="CanvasLayer3" parent="." instance=ExtResource("9_qx4i0")]
+
+[node name="mobile" parent="." instance=ExtResource("10_qg8ib")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

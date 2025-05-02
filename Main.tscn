@@ -1,0 +1,204 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7517qwmffux1"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_do5ry"]
+[ext_resource type="PackedScene" uid="uid://b2m4ihijwujnr" path="res://Player.tscn" id="1_qeffj"]
+[ext_resource type="PackedScene" uid="uid://b1eut5uuya6es" path="res://tilesmap.tscn" id="3_ccyue"]
+[ext_resource type="PackedScene" uid="uid://bhfwqk42sqifm" path="res://fire.tscn" id="4_q2fqg"]
+[ext_resource type="PackedScene" uid="uid://b1e1gpotifi5t" path="res://coin.tscn" id="5_v60t8"]
+[ext_resource type="PackedScene" uid="uid://dkyaxvns0omwb" path="res://panel.tscn" id="7_mh2ge"]
+[ext_resource type="PackedScene" uid="uid://4r5kbof2n6w0" path="res://notification.tscn" id="7_u1or8"]
+[ext_resource type="PackedScene" uid="uid://dao45gr70t6w5" path="res://door1.tscn" id="8_qg7tt"]
+[ext_resource type="PackedScene" uid="uid://clfkvx6egfcjj" path="res://mobilecontrols.tscn" id="9_8yfd0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xr4us"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="main" type="Node2D"]
+position = Vector2(100, 0)
+script = ExtResource("1_do5ry")
+
+[node name="player" parent="." instance=ExtResource("1_qeffj")]
+z_index = 2
+position = Vector2(324, 551)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = -11
+limit_bottom = 1000
+
+[node name="TileMap" parent="." instance=ExtResource("3_ccyue")]
+z_as_relative = false
+position = Vector2(-93, -10)
+
+[node name="fire" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(1389, 817)
+
+[node name="fire6" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(2030, 689)
+
+[node name="fire7" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(2027, 824)
+
+[node name="fire9" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(2027, 824)
+
+[node name="fire13" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(2104, 528)
+
+[node name="fire15" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(2723, 527)
+
+[node name="fire17" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(3534, 823)
+
+[node name="fire20" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(5210, 532)
+
+[node name="fire21" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(5705, 540)
+
+[node name="fire25" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(7213, 552)
+
+[node name="fire24" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(7762, 546)
+
+[node name="fire19" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(4069, 805)
+
+[node name="fire10" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(1844, 695)
+
+[node name="fire11" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(1769, 818)
+
+[node name="fire12" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(1961, 818)
+
+[node name="fire8" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(1898, 821)
+
+[node name="fire2" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(936, 815)
+
+[node name="fire3" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(26, 805)
+
+[node name="fire5" parent="." instance=ExtResource("4_q2fqg")]
+position = Vector2(486, 786)
+
+[node name="coin" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(650, 795)
+
+[node name="coin3" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(1056, 528)
+
+[node name="coin4" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(1916, 532)
+
+[node name="coin6" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(2924, 533)
+
+[node name="coin10" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(2313, 520)
+
+[node name="coin7" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(3625, 820)
+
+[node name="coin9" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(4386, 815)
+
+[node name="coin11" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(4934, 524)
+
+[node name="coin12" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(5495, 524)
+
+[node name="coin13" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(6107, 785)
+
+[node name="coin14" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(6973, 506)
+
+[node name="coin15" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(7515, 503)
+
+[node name="coin16" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(7923, 521)
+
+[node name="coin8" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(3709, 664)
+
+[node name="coin5" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(2508, 596)
+
+[node name="coin2" parent="." instance=ExtResource("5_v60t8")]
+z_index = 2
+z_as_relative = false
+position = Vector2(1531, 798)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.421
+anchor_bottom = 1.0
+offset_left = 1624.0
+offset_top = 10.0
+offset_right = -187.456
+offset_bottom = -869.0
+text = "coins: 0"
+label_settings = SubResource("LabelSettings_xr4us")
+
+[node name="Panel" parent="." instance=ExtResource("7_mh2ge")]
+z_index = 5
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -74.0
+offset_top = 101.0
+offset_right = 1198.0
+offset_bottom = 698.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer3" parent="." instance=ExtResource("7_u1or8")]
+
+[node name="door" parent="." instance=ExtResource("8_qg7tt")]
+position = Vector2(8557, 747)
+
+[node name="mobile" parent="." instance=ExtResource("9_8yfd0")]
+
+[connection signal="area_entered" from="door" to="door" method="_on_area_entered"]
+[connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
+[connection signal="body_exited" from="door" to="door" method="_on_body_exited"]

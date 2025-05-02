@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c51bop2fpm0sh"]
+
+[ext_resource type="Script" path="res://screw.gd" id="1_tsaoe"]
+[ext_resource type="Texture2D" uid="uid://cat5e7pqyhlko" path="res://toys/robot.png" id="2_rw5nm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oevjk"]
+size = Vector2(95.5411, 106.736)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_tsaoe")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(48, 2)
+rotation = -3.14159
+scale = Vector2(0.450067, 0.430972)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(25.5517, -25.5238)
+shape = SubResource("RectangleShape2D_oevjk")
+
+[node name="Robot" type="Sprite2D" parent="."]
+position = Vector2(36, 11)
+scale = Vector2(0.336158, 0.274194)
+texture = ExtResource("2_rw5nm")

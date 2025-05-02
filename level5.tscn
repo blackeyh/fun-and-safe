@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://brplsbhsge8gn"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_erble"]
+[ext_resource type="PackedScene" uid="uid://cqho4lsbxq8ln" path="res://level5map.tscn" id="1_sfb0k"]
+[ext_resource type="PackedScene" uid="uid://b2m4ihijwujnr" path="res://Player.tscn" id="2_w16ec"]
+[ext_resource type="PackedScene" uid="uid://b1e1gpotifi5t" path="res://coin.tscn" id="4_581tl"]
+[ext_resource type="PackedScene" uid="uid://d38narjwq3jqa" path="res://level5ui.tscn" id="5_8on0n"]
+[ext_resource type="PackedScene" uid="uid://b27qo41rir5ta" path="res://door5.tscn" id="6_8lniw"]
+[ext_resource type="PackedScene" uid="uid://4r5kbof2n6w0" path="res://notification.tscn" id="7_epceg"]
+[ext_resource type="PackedScene" uid="uid://clfkvx6egfcjj" path="res://mobilecontrols.tscn" id="8_i7016"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3ohb"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="level5" type="Node2D"]
+script = ExtResource("1_erble")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_sfb0k")]
+position = Vector2(255, 16)
+
+[node name="player" parent="." instance=ExtResource("2_w16ec")]
+z_index = 2
+position = Vector2(324, 551)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = -11
+limit_bottom = 1000
+
+[node name="Area2D" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(629, 835)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(1049, 827)
+
+[node name="Area2D3" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(1543, 562)
+
+[node name="Area2D4" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(1977, 559)
+
+[node name="Area2D5" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(2381, 828)
+
+[node name="Area2D6" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(2573, 818)
+
+[node name="Area2D7" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(3141, 831)
+
+[node name="Area2D8" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(3401, 838)
+
+[node name="Area2D9" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(3628, 540)
+
+[node name="Area2D10" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(3875, 540)
+
+[node name="Area2D11" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(4908, 546)
+
+[node name="Area2D13" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(5454, 542)
+
+[node name="Area2D14" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(6144, 556)
+
+[node name="Area2D15" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(6484, 559)
+
+[node name="Area2D16" parent="." instance=ExtResource("4_581tl")]
+position = Vector2(7216, 806)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.421
+anchor_bottom = 1.0
+offset_left = 1624.0
+offset_top = 10.0
+offset_right = -187.456
+offset_bottom = -869.0
+text = "coins: 0"
+label_settings = SubResource("LabelSettings_j3ohb")
+
+[node name="Panel" parent="." instance=ExtResource("5_8on0n")]
+offset_left = 30.0
+offset_top = 87.0
+offset_right = 1150.0
+offset_bottom = 151.0
+
+[node name="Area2D12" parent="." instance=ExtResource("6_8lniw")]
+position = Vector2(7629, 780)
+
+[node name="CanvasLayer3" parent="." instance=ExtResource("7_epceg")]
+
+[node name="mobile" parent="." instance=ExtResource("8_i7016")]

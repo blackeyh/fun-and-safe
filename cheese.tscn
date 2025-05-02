@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cik8w7hx4y878"]
+
+[ext_resource type="Script" path="res://screw.gd" id="1_7gaff"]
+[ext_resource type="Texture2D" uid="uid://biex3w7ad7shq" path="res://spoiled food/cheese.png" id="2_pajhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mr73"]
+size = Vector2(171.085, 174.026)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_7gaff")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(48, 2)
+rotation = -3.14159
+scale = Vector2(0.450067, 0.430972)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.33273, -17.4026)
+shape = SubResource("RectangleShape2D_8mr73")
+
+[node name="Cheese" type="Sprite2D" parent="."]
+position = Vector2(46, 9)
+scale = Vector2(0.513699, 0.513158)
+texture = ExtResource("2_pajhj")

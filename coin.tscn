@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1e1gpotifi5t"]
+
+[ext_resource type="Texture2D" uid="uid://cgkwu00qb8tmk" path="res://assets/collected/Collected_1.png" id="1_oxr2i"]
+[ext_resource type="Script" path="res://coin.gd" id="1_uo6ge"]
+[ext_resource type="Texture2D" uid="uid://d32hv7cnxmikr" path="res://assets/collected/collected_2.png" id="2_qewsg"]
+[ext_resource type="Texture2D" uid="uid://dvlj0dx7bivrc" path="res://assets/collected/collected_3.png" id="3_mx5w3"]
+[ext_resource type="Texture2D" uid="uid://dq8y6c82uwv4u" path="res://assets/collected/collected_4.png" id="4_bryub"]
+[ext_resource type="Texture2D" uid="uid://cf55mppulhqpe" path="res://assets/collected/collected_5.png" id="5_f8e1b"]
+[ext_resource type="Texture2D" uid="uid://cilh5t3th8oih" path="res://assets/collected/collected_6.png" id="6_74ev2"]
+[ext_resource type="Texture2D" uid="uid://cgn8ka83pkh0o" path="res://assets/coin/tile_0151.png" id="7_okygg"]
+[ext_resource type="Texture2D" uid="uid://daclhlxffnvvj" path="res://assets/coin/tile_0152.png" id="8_6n7n6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_655e4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oxr2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qewsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mx5w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bryub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f8e1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_74ev2")
+}],
+"loop": false,
+"name": &"collected",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_okygg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6n7n6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.01
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pytrf"]
+size = Vector2(35, 45)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_uo6ge")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14.6424, -18.6597)
+scale = Vector2(3.03974, 3.48225)
+sprite_frames = SubResource("SpriteFrames_655e4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.5, -19.5)
+shape = SubResource("RectangleShape2D_pytrf")

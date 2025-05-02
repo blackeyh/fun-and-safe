@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3p0y6ald74w"]
+
+[ext_resource type="Script" path="res://flame.gd" id="1_2b2p0"]
+[ext_resource type="Texture2D" uid="uid://dhw7ca88f7h2t" path="res://assets/fire/flame1.png" id="1_2tvb4"]
+[ext_resource type="Texture2D" uid="uid://c1kfiss61drko" path="res://assets/fire/flame3.png" id="2_b4uks"]
+[ext_resource type="Texture2D" uid="uid://cx5tt2ohoahjg" path="res://assets/fire/flame2.png" id="4_ma7hb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdjcd"]
+size = Vector2(53, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2tvb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b4uks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ma7hb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Area2D" type="Area2D"]
+z_as_relative = false
+script = ExtResource("1_2b2p0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20.5, -22.5)
+shape = SubResource("RectangleShape2D_qdjcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(20.3125, -19.25)
+scale = Vector2(3.8125, 3.26471)
+sprite_frames = SubResource("SpriteFrames_it2fr")
+frame_progress = 0.0575384

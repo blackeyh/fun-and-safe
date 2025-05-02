@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://1gqj031yab6q"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_4k2jn"]
+[ext_resource type="PackedScene" uid="uid://b2m4ihijwujnr" path="res://Player.tscn" id="1_6ap7w"]
+[ext_resource type="PackedScene" uid="uid://bqihqh18nphaq" path="res://level6map.tscn" id="2_42ar2"]
+[ext_resource type="PackedScene" uid="uid://kskekoyq5fxs" path="res://level6ui.tscn" id="4_wf0qp"]
+[ext_resource type="PackedScene" uid="uid://4r5kbof2n6w0" path="res://notification.tscn" id="5_24ics"]
+[ext_resource type="PackedScene" uid="uid://clfkvx6egfcjj" path="res://mobilecontrols.tscn" id="6_k5pcq"]
+[ext_resource type="PackedScene" uid="uid://d31sk2a37uf1b" path="res://door6.tscn" id="7_4eo6r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oshwa"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwoda"]
+size = Vector2(171, 902)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4umgc"]
+size = Vector2(200, 956.5)
+
+[node name="level6" type="Node2D"]
+script = ExtResource("1_4k2jn")
+
+[node name="player" parent="." instance=ExtResource("1_6ap7w")]
+z_index = 2
+position = Vector2(324, 551)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = -11
+limit_bottom = 1000
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_42ar2")]
+position = Vector2(-303, 44)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.421
+anchor_bottom = 1.0
+offset_left = 1624.0
+offset_top = 10.0
+offset_right = -187.456
+offset_bottom = -869.0
+text = "coins: 0"
+label_settings = SubResource("LabelSettings_oshwa")
+
+[node name="Panel" parent="." instance=ExtResource("4_wf0qp")]
+offset_left = 276.0
+offset_top = 224.0
+offset_right = 1396.0
+offset_bottom = 288.0
+
+[node name="CanvasLayer3" parent="." instance=ExtResource("5_24ics")]
+
+[node name="mobile" parent="." instance=ExtResource("6_k5pcq")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(84, 441)
+shape = SubResource("RectangleShape2D_gwoda")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7158, 430.25)
+shape = SubResource("RectangleShape2D_4umgc")
+
+[node name="Area2D" parent="StaticBody2D" instance=ExtResource("7_4eo6r")]
+position = Vector2(6479, 825)

@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkyaxvns0omwb"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_x6f74"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipa3i"]
+font_size = 34
+
+[sub_resource type="Theme" id="Theme_jijkl"]
+default_font_size = 16
+
+[node name="Panel" type="Panel"]
+anchors_preset = -1
+anchor_right = 0.989
+anchor_bottom = 0.733
+offset_left = 135.0
+offset_top = 94.0
+offset_right = -37.3041
+offset_bottom = 110.708
+script = ExtResource("1_x6f74")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.575
+offset_bottom = -64.85
+text = "مغامرة الأخوات الثلاث في الغابة: رحلة إلى عالم المخاطر!
+
+في صباح يوم مشمس، قررت الأخوات الثلاث أن يذهبن في مغامرة إلى الغابة المجاورة لقريتهن. كانت قلوبهن مليئة بالحماس، وبدأن رحلتهن مستعدات لاستكشاف العالم الكبير. ولكن لم يكن يعرفن أن الغابة مليئة بالأخطار التي تنتظرهن.
+
+أول خطر: نار تلتهم الأشجار!
+
+بينما كن يسيرن في الطريق، شعرت \"سلمى\" بحرارة شديدة في الهواء، وعندما نظرت إلى الأمام، رأت نارًا ضخمة تلتهم الأشجار! كانت الألسنة تلتف وتلتهم كل شيء في طريقها، وتبدو وكأنها تحاول أن تلاحقهن! تذكرت سلمى كلمات أمها الحكيمة: \"النار لا ترحم، ابتعدن عنها بسرعة!\" فركضن بعيدًا، محاولات تفادي اللهب الذي كاد يلمس ملابسهن!
+"
+label_settings = SubResource("LabelSettings_ipa3i")
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113
+anchor_top = 0.244
+anchor_right = 0.906
+anchor_bottom = 0.993
+offset_left = 260.163
+offset_top = 536.664
+offset_right = -320.994
+offset_bottom = 101.858
+theme = SubResource("Theme_jijkl")
+theme_override_font_sizes/font_size = 16
+text = "حسنا"

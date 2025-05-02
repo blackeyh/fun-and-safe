@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://d38narjwq3jqa"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_42opx"]
+
+[sub_resource type="Theme" id="Theme_w6pap"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an5rv"]
+bg_color = Color(0.977064, 0.79011, 0.647781, 0.964)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipa3i"]
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+outline_color = Color(0.000245483, 0.000245483, 0.000245483, 1)
+
+[sub_resource type="Theme" id="Theme_jijkl"]
+default_font_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ctat"]
+bg_color = Color(0, 0.873701, 0.417885, 1)
+
+[node name="Panel" type="Panel"]
+z_index = 5
+offset_left = 193.0
+offset_top = 26.0
+offset_right = 1313.0
+offset_bottom = 90.0
+script = ExtResource("1_42opx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.575
+offset_left = -32.0
+offset_right = 8.0
+offset_bottom = 327.2
+theme = SubResource("Theme_w6pap")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an5rv")
+text = "خامس خطر: الأطعمة الفاسدة!
+
+بينما كانت \"سجى\" تتجول بين الأشجار، شعرت بالجوع فبدأت تبحث عن شيء تأكله. وجدت بعض الفواكه المتساقطة على الأرض، ولكنها لاحظت أن بعضها متعفن وله رائحة كريهة. فتذكرت ما أخبرتها به والدتها: \"لا تأكلي الطعام إذا بدا غير طبيعي أو رائحته كريهة!\" فابتعدت بسرعة عن الفواكه الفاسدة، محاولتً العثور على شيء صحي لتأكله"
+label_settings = SubResource("LabelSettings_ipa3i")
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113
+anchor_top = 0.244
+anchor_right = 0.906
+anchor_bottom = 0.993
+offset_left = 317.44
+offset_top = 380.384
+offset_right = -339.72
+offset_bottom = 386.448
+theme = SubResource("Theme_jijkl")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ctat")
+text = "حسنا"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

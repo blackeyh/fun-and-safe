@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg7fpwvkah600"]
+
+[ext_resource type="Texture2D" uid="uid://d0ll0lw2c821w" path="res://END.png" id="1_uyvr0"]
+[ext_resource type="FontFile" uid="uid://by4vdkca3qc6u" path="res://cour.ttf" id="2_c1wri"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3s655"]
+line_spacing = 140.0
+font = ExtResource("2_c1wri")
+font_size = 140
+font_color = Color(0.376471, 1, 1, 1)
+outline_size = 18
+outline_color = Color(0, 0.660495, 0.661375, 1)
+shadow_size = 14
+shadow_color = Color(0, 0, 1, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="End" type="Sprite2D" parent="."]
+position = Vector2(932.75, 484.25)
+scale = Vector2(2.84033, 1.43759)
+texture = ExtResource("1_uyvr0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 53.0
+offset_right = 1290.0
+offset_bottom = 240.0
+text = "النهاية"
+label_settings = SubResource("LabelSettings_3s655")

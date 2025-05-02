@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b60ujttlkbmsx"]
+
+[ext_resource type="Texture2D" uid="uid://vkl3pm0ft6jf" path="res://car1.png" id="1_rqvfp"]
+[ext_resource type="Script" path="res://car.gd" id="2_ges4j"]
+[ext_resource type="Script" path="res://cararea.gd" id="3_lit1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddwtk"]
+size = Vector2(300, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk6nw"]
+size = Vector2(318, 121.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("2_ges4j")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(139, -64)
+texture = ExtResource("1_rqvfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(137, -48.5)
+shape = SubResource("RectangleShape2D_ddwtk")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_lit1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(137, -48.25)
+shape = SubResource("RectangleShape2D_yk6nw")
+debug_color = Color(0.906334, 0.000130338, 0.743681, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

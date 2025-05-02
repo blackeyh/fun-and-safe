@@ -1,0 +1,163 @@
+[gd_scene load_steps=15 format=3 uid="uid://4r5kbof2n6w0"]
+
+[ext_resource type="Script" path="res://notification.gd" id="1_q7ae3"]
+[ext_resource type="Script" path="res://notificationlabel.gd" id="2_vajap"]
+[ext_resource type="Texture2D" uid="uid://c22wxi6xyrt80" path="res://envelop.png" id="2_y3gue"]
+[ext_resource type="Script" path="res://notificationbutton.gd" id="3_4s18d"]
+[ext_resource type="Script" path="res://envelop.gd" id="4_kpn14"]
+
+[sub_resource type="Theme" id="Theme_iinp8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgc26"]
+bg_color = Color(0.977064, 0.79011, 0.647781, 0.964)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_c47tg"]
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+outline_color = Color(0.000245483, 0.000245483, 0.000245483, 1)
+
+[sub_resource type="Theme" id="Theme_3ojc6"]
+default_font_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0aui"]
+bg_color = Color(0, 0.873701, 0.417885, 1)
+
+[sub_resource type="Animation" id="Animation_4k2nq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 1064)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yl0s1"]
+resource_name = "slidein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 1, 1.0001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(106, 974), Vector2(106, 974), Vector2(93, 281), Vector2(93, 281)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0001, 1, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kwsms"]
+resource_name = "slideout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(93, 281), Vector2(106, -829)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_secxs"]
+_data = {
+"RESET": SubResource("Animation_4k2nq"),
+"slidein": SubResource("Animation_yl0s1"),
+"slideout": SubResource("Animation_kwsms")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_q7ae3")
+
+[node name="Label" type="Label" parent="."]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1064.0
+offset_right = -379.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_iinp8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lgc26")
+label_settings = SubResource("LabelSettings_c47tg")
+horizontal_alignment = 2
+autowrap_mode = 3
+script = ExtResource("2_vajap")
+
+[node name="Envelop" type="Sprite2D" parent="Label"]
+z_as_relative = false
+position = Vector2(513, 298)
+scale = Vector2(1.16824, 0.841542)
+texture = ExtResource("2_y3gue")
+script = ExtResource("4_kpn14")
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 394.0
+offset_right = 617.0
+offset_bottom = 474.0
+theme = SubResource("Theme_3ojc6")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_f0aui")
+text = "حسنا"
+script = ExtResource("3_4s18d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_secxs")
+}
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]
