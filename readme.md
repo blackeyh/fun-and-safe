@@ -33,6 +33,29 @@
 
 ---
 
+---
+
+## 📸 Visual Snapshots
+
+- **Level 1 – Fire Danger**  
+  ![](fire.png)
+
+- **Level 2 – Water & Drowning** *(with storyteller visible)*  
+  ![](level2.png)
+
+- **Level 3 – Cars & Roads** *(character in action)*  
+  ![](level3.png)
+
+- **Level 4 – Sharp Spikes**  
+  ![](level4.png)
+
+- **Level 5 – Spoiled Food** *(with advice hint visible)*  
+  ![](level5.png)
+
+- **Level 6 – Dangerous Toys**  
+  ![](level6.png)
+
+---
 ## 🏆 Gameplay Mechanics
 
 - 🪙 **Coin Collection**  
